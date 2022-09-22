@@ -1,16 +1,84 @@
 ﻿         // Выполнение практических задааний на семинарах
 
-         
+         // Семинары, урок 3 (22.09.22)
+// Seminar_3_Task_17();
+// Seminar_3_Task_18();
+// Seminar_3_Task_21();
+Seminar_3_Task_22();
+
+static void Seminar_3_Task_22() {
+          // Задача 22. Напишите программу, которая принимает на вход число (N) и выдаёт 
+          // таблицу квадратов чисел от 1 до N.
+    Random RundNum = new Random();
+    int Num = RundNum.Next(1, 100);
+    string ResultStr = "";
+    int i = 1;
+
+    Console.WriteLine($"Квадраты чисел от 1 до {Num}:");
+    while (i <= Num) {
+        if (ResultStr.Length > 0) ResultStr = ResultStr.Insert(ResultStr.Length, ", ");
+        ResultStr = ResultStr.Insert(ResultStr.Length, Convert.ToString(Math.Pow(i,2)));
+        i = i + 1;
+    }
+    Console.WriteLine(ResultStr);
+}
+static void Seminar_3_Task_21() {
+          // Задача 21. Напишите программу, которая принимает на вход координаты двух точек
+          // и находит расстояние между ними в 2D пространстве.
+//    Console.WriteLine("Введите первое число:");
+//    int N1= Convert.ToInt16(Console.ReadLine());
+//    Console.WriteLine("Введите второе число:");
+//    int N2= Convert.ToInt16(Console.ReadLine());
+    Random RundNum = new Random();
+    int Ax = RundNum.Next(-10, 11);
+    int Ay = RundNum.Next(-10, 11);
+    int Bx = RundNum.Next(-10, 11);
+    int By = RundNum.Next(-10, 11);
+
+    Console.WriteLine($"Точки: A({Ax}, {Ay}), B({Bx}, {By})");
+    Console.WriteLine($"Расстояние между точками А и В: {Math.Sqrt(Math.Pow((Bx-Ax),2) + Math.Pow((By-Ay),2))}");
+}
+static void Seminar_3_Task_18() {
+          // Задача 18. Напишите программу, которая по заданному номеру четверти, показывает диапазон 
+          // возможных координат точек в этой четверти (x и y).
+    Random RundNum = new Random();
+    int q = RundNum.Next(1, 5);
+    Console.WriteLine($"Задана четветь {q}");
+    
+    if (q == 1) Console.WriteLine("Точки будут иметь координаты: (0 < X < ∞) и (0 < Y < ∞).");
+        else if (q == 2) Console.WriteLine("Точки будут иметь координаты: (-∞ < X < 0) и (0 < Y < ∞).");
+                 else if (q == 3) Console.WriteLine("Точки будут иметь координаты: (-∞ < X < 0) и (-∞ < Y < 0).");
+                          else if (q == 4) Console.WriteLine("Точки будут иметь координаты: (0 < X < ∞) и (-∞ < Y < 0).");
+                                   else Console.WriteLine("Указана несуществующая четверть.");
+}
+static void Seminar_3_Task_17() {
+          // Задача 17. Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0,
+          // и выдаёт номер четверти плоскости,  в которой находится эта точка.
+//    Console.WriteLine("Введите первое число:");
+//    int N1= Convert.ToInt16(Console.ReadLine());
+//    Console.WriteLine("Введите второе число:");
+//    int N2= Convert.ToInt16(Console.ReadLine());
+    Random RundNum = new Random();
+    int x = RundNum.Next(-10, 11);
+    int y = RundNum.Next(-10, 11);
+//    Console.WriteLine($"Точка ({x}, {y})");
+    
+    if ((x > 0) && (y > 0)) Console.WriteLine($"Точка ({x}, {y}) лежит в первой четверти.");
+        else if ((x < 0) && (y > 0)) Console.WriteLine($"Точка ({x}, {y}) лежит во второй четверти.");
+                 else if ((x < 0) && (y < 0)) Console.WriteLine($"Точка ({x}, {y}) лежит в третьей четверти.");
+                          else if ((x > 0) && (y < 0)) Console.WriteLine($"Точка ({x}, {y}) лежит в четвертой четверти.");
+                                   else Console.WriteLine($"Точка ({x}, {y}) лежит на одной из осей.");
+}
+
          // Семинары, урок 2 (19.09.22)
 // Seminar_2_Task_09();
 // Seminar_2_Task_11();
 // Seminar_2_Task_12();
 // Seminar_2_Task_14();
-Seminar_2_Task_16();
- 
-static void Seminar_2_Task_16() {
+// Seminar_2_Task_16();
+ static void Seminar_2_Task_16() {
           // Задача 16. Напишите программу, которая принимает на вход два числа и проверяет, 
-          // яявляется ли одно число квадратом другого.
+          // является ли одно число квадратом другого.
     Console.WriteLine("Введите первое число:");
     int N1= Convert.ToInt16(Console.ReadLine());
     Console.WriteLine("Введите второе число:");
@@ -65,8 +133,3 @@ static void Seminar_2_Task_09() {
     if (tens > ones) Console.WriteLine($"Большее число: {tens}");
         else Console.WriteLine($"Большее число: {ones}");
 }
-
-
-
-
-
