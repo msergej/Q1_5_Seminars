@@ -1,10 +1,48 @@
 ﻿         // Выполнение практических задааний на семинарах
 
+         // Семинары, урок 4 (26.09.22)
+// Seminar_3_Task_17();
+// Seminar_3_Task_18();
+Seminar_4_Task_30();
+// Seminar_4_Task_26();
+
+static void Seminar_4_Task_30()      {
+          // Задача 30. Напишите программу, которая выводит массив из 8 элементов,
+          // заполненный нулями и единицами в случайном порядке, например: [1,0,1,1,0,1,0,0].
+    Random RundNum = new Random();
+    int size = RundNum.Next(4,10);
+    int[] Nums = new int[size]; 
+          // Заполнение массива и его печать выполняются соответствующими подпрограммами
+//    for (int i=1; i<size; i++) Nums[i] = RundNum.Next(0,2);
+//    for (int i=1; i<size; i++) Console.Write(Nums[i] + "\t");
+    Seminar_4_Task_30_FillArray(Nums);
+    Seminar_4_Task_30_PrintArray(Nums);
+    Console.WriteLine("- - - - - - - Задача 30 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_4_Task_30_FillArray(int[] Mas) {
+          // Задача 30. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    for (int i=1; i<Mas.Length; i++) Mas[i] = RundNum.Next(0,2);
+}
+static void Seminar_4_Task_30_PrintArray(int[] Mas) {
+          // Задача 30. Подпрограмма печати массива
+    for (int i=1; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+static void Seminar_4_Task_26()      {
+          // Задача 26. Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
+    Console.Write("Введите число:");
+    int Num = Convert.ToInt32(Console.ReadLine());
+          // Для подсчета количества цифр используем десятичный логарифм округленный вверх
+    Console.WriteLine($"Количество цифр в числе {Num}: {Math.Ceiling(Math.Log10(Num))}");
+    Console.WriteLine("- - - - - - - Задача 26 успешно выполнена! - - - - - - -\n");
+}
+/*
          // Семинары, урок 3 (22.09.22)
 // Seminar_3_Task_17();
 // Seminar_3_Task_18();
 // Seminar_3_Task_21();
-Seminar_3_Task_22();
+// Seminar_3_Task_22();
 
 static void Seminar_3_Task_22() {
           // Задача 22. Напишите программу, которая принимает на вход число (N) и выдаёт 
@@ -68,8 +106,8 @@ static void Seminar_3_Task_17() {
                  else if ((x < 0) && (y < 0)) Console.WriteLine($"Точка ({x}, {y}) лежит в третьей четверти.");
                           else if ((x > 0) && (y < 0)) Console.WriteLine($"Точка ({x}, {y}) лежит в четвертой четверти.");
                                    else Console.WriteLine($"Точка ({x}, {y}) лежит на одной из осей.");
-}
-
+} */
+/*
          // Семинары, урок 2 (19.09.22)
 // Seminar_2_Task_09();
 // Seminar_2_Task_11();
@@ -132,4 +170,4 @@ static void Seminar_2_Task_09() {
     int ones = Num % 10;
     if (tens > ones) Console.WriteLine($"Большее число: {tens}");
         else Console.WriteLine($"Большее число: {ones}");
-}
+} */
