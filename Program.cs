@@ -1,9 +1,142 @@
 ﻿         // Выполнение практических задааний на семинарах
 
+         // Семинары, урок 5 (29.09.22)
+Seminar_5_Task_37();
+// Seminar_5_Task_35();
+// Seminar_5_Task_33();
+// Seminar_5_Task_32();
+// Seminar_5_Task_26();
+
+static void Seminar_5_Task_37() {
+          // Задача 37. Найдите произведение пар чисел в одномерном массиве.
+          // Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+          // Результат запишите в новом массиве.
+    Random RundNum = new Random();
+    int size = RundNum.Next(6,16);
+    int[] Nums = new int[size]; 
+          // Заполнение массива и его печать выполняются соответствующими подпрограммами
+    Seminar_5_Task_37_FillArray(Nums);
+    Seminar_5_Task_37_PrintArray(Nums);
+    Seminar_5_Task_37_Multiplication(Nums);
+    Console.WriteLine("- - - - - - - Задача 37 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_5_Task_37_Multiplication(int[] Mas) {
+          // Задача 35. Подпрограмма перемножения чисел 
+    int MaxIndex = Mas.Length - 1;
+    for (int i=0; i<(Mas.Length/2); i++) Console.Write ($"{Mas[i]} * {Mas[MaxIndex-i]} = {Mas[i]*Mas[MaxIndex-i]}\n");
+    if ((Mas.Length % 2) == 1) Console.Write ($"Средний элемент массива: {Mas[Mas.Length / 2]}\n");
+}
+static void Seminar_5_Task_37_FillArray(int[] Mas) {
+          // Задача 33. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    for (int i=0; i<Mas.Length; i++) Mas[i] = RundNum.Next(-100,100);
+}
+static void Seminar_5_Task_37_PrintArray(int[] Mas) {
+          // Задача 33. Подпрограмма печати массива
+    for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+static void Seminar_5_Task_35() {
+          // Задача 34. Задайте одномерный массив, состоящий из случайных чисел.
+          // Найдите количество элементов массива, значения которых лежат в отрезке [10,99]. 
+          // [5, 18, 123, 6, 2] -> 1; [1, 2, 3, 6, 2] -> 0; [10, 11, 12, 13, 14] -> 5
+    Random RundNum = new Random();
+    int size = RundNum.Next(10,16);
+    int[] Nums = new int[size]; 
+          // Заполнение массива и его печать выполняются соответствующими подпрограммами
+    Seminar_5_Task_35_FillArray(Nums);
+    Seminar_5_Task_35_PrintArray(Nums);
+    Seminar_5_Task_35_FindValues(Nums);
+    Console.WriteLine("- - - - - - - Задача 35 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_5_Task_35_FindValues(int[] Mas) {
+          // Задача 35. Подпрограмма поиска элементов, лежащих в диапазоне [10, 99] , 
+    int k = 0;
+    for (int i=0; i<Mas.Length; i++)
+        if ((Mas[i] >= 10) & (Mas[i] <= 99)) k++;
+/*    while (found & (i<Mas.Length)) {
+        if (Mas[i] == Num) found = true;
+        i++; 
+    } */
+    Console.Write($"В массиве имеется {k} чисел, лежащих в диапазоне [10, 99].\n");
+}
+static void Seminar_5_Task_35_FillArray(int[] Mas) {
+          // Задача 33. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    for (int i=0; i<Mas.Length; i++) Mas[i] = RundNum.Next(-100,100);
+}
+static void Seminar_5_Task_35_PrintArray(int[] Mas) {
+          // Задача 33. Подпрограмма печати массива
+    for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+static void Seminar_5_Task_33() {
+          // Задача 33: Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+    Console.WriteLine("Введите число для поиска:");
+    int N = Convert.ToInt16(Console.ReadLine());
+    Random RundNum = new Random();
+    int size = RundNum.Next(10,16);
+    int[] Nums = new int[size]; 
+          // Заполнение массива и его печать выполняются соответствующими подпрограммами
+    Seminar_5_Task_33_FillArray(Nums);
+    Seminar_5_Task_33_PrintArray(Nums);
+    Seminar_5_Task_33_FindValue(Nums, N);
+    Console.WriteLine("- - - - - - - Задача 33 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_5_Task_33_FindValue(int[] Mas, int Num) {
+          // Задача 33. Подпрограмма поиска числа
+    bool found = false;
+//    int i = 0;
+    for (int i=0; (!(found) & i<Mas.Length); i++) if (Mas[i] == Num) found = true;
+/*    while (found & (i<Mas.Length)) {
+        if (Mas[i] == Num) found = true;
+        i++; 
+    } */
+    if (found) Console.Write($"Число {Num} присутствует в массиве.\n");
+      else Console.Write($"Число {Num} не присутствует в массиве.\n");
+}
+static void Seminar_5_Task_33_FillArray(int[] Mas) {
+          // Задача 33. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    for (int i=0; i<Mas.Length; i++) Mas[i] = RundNum.Next(0,21);
+}
+static void Seminar_5_Task_33_PrintArray(int[] Mas) {
+          // Задача 33. Подпрограмма печати массива
+    for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+static void Seminar_5_Task_32()      {
+          // Задача 32. Напишите программу замены элементов массива:
+          // положительные элементы замените на соответствующие отрицательные, и наоборот.
+    Random RundNum = new Random();
+    int size = RundNum.Next(10,16);
+    int[] Nums = new int[size]; 
+          // Заполнение массива и его печать выполняются соответствующими подпрограммами
+    Seminar_5_Task_32_FillArray(Nums);
+    Seminar_5_Task_32_PrintArray(Nums);
+    Seminar_5_Task_32_ChangeValues(Nums);
+    Seminar_5_Task_32_PrintArray(Nums);
+    Console.WriteLine("- - - - - - - Задача 32 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_5_Task_32_ChangeValues(int[] Mas) {
+          // Задача 32. Подпрограмма замены элементов
+    for (int i=0; i<Mas.Length; i++) Mas[i] = - Mas[i];
+}
+static void Seminar_5_Task_32_FillArray(int[] Mas) {
+          // Задача 32. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    for (int i=0; i<Mas.Length; i++) Mas[i] = RundNum.Next(-10,11);
+}
+static void Seminar_5_Task_32_PrintArray(int[] Mas) {
+          // Задача 32. Подпрограмма печати массива
+    for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+
          // Семинары, урок 4 (26.09.22)
 // Seminar_3_Task_17();
 // Seminar_3_Task_18();
-Seminar_4_Task_30();
+// Seminar_4_Task_30();
 // Seminar_4_Task_26();
 
 static void Seminar_4_Task_30()      {
