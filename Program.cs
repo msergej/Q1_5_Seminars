@@ -1,7 +1,122 @@
 ﻿         // Выполнение практических задааний на семинарах
 
+         // Семинары, урок 5 (03.10.22)
+Seminar_6_Task_45();
+// Seminar_6_Task_44();
+// Seminar_6_Task_42();
+// Seminar_6_Task_40();
+// Seminar_6_Task_39();
+
+static void Seminar_6_Task_45() {
+          // Задача 45. Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
+    Random RundNum = new Random();
+    int N = RundNum.Next(1,51);
+    int[] Mas = new int[N], Mas_2 = new int[N];
+
+    Console.WriteLine("Исходный массив:");
+    Seminar_6_Task_45_FillArray(Mas);
+    Seminar_6_Task_45_PrintArray(Mas);
+    
+    for(int i=0; i<N; i++) Mas_2[i] = Mas[i];
+    
+    Console.WriteLine("Копия массива:");
+    Seminar_6_Task_45_PrintArray(Mas_2);
+    Console.WriteLine("\n- - - - - - - Задача 45 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_6_Task_45_FillArray(int[] Mas) {
+          // Задача 45. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    for (int i=0; i<Mas.Length; i++) Mas[i] = RundNum.Next(-100,100);
+}
+static void Seminar_6_Task_45_PrintArray(int[] Mas) {
+          // Задача 45. Подпрограмма печати массива
+    for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+static void Seminar_6_Task_44() {
+          // Задача 44. Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
+    Random RundNum = new Random();
+    int N = RundNum.Next(0,101);
+    double[] MasFib= new double[N];
+
+    MasFib[0] = 0;
+    MasFib[1] = 1;
+    int i = 2;
+    while (i < N) {
+        MasFib[i] = MasFib[i-2] + MasFib[i-1];
+        i += 1;     
+    }
+    Console.WriteLine($"Первые {N} чисел Фибоначчи:");
+//    Seminar_6_Task_44_PrintArray(MasFib);
+    for(i=0; i<N; i++) Console.Write(MasFib[i] + "\t");
+    Console.WriteLine("\n- - - - - - - Задача 44 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_6_Task_44_PrintArray(double[] Mas) {
+          // Задача 44. Подпрограмма печати массива
+    for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+static void Seminar_6_Task_42() {
+          // Задача 42. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+    Random RundNum = new Random();
+    int Num = RundNum.Next(0,101);
+    int Num10 = Num;
+    double NumAs2 = 0;
+    double i = 0;
+    while (Num10 > 0) {
+        NumAs2 = (Num10 % 2)*Math.Pow(10,i) + NumAs2;
+        Num10 /= 2;
+        i += 1;     
+    }
+    Console.WriteLine($"{Num} в двоичном коде: {NumAs2}.");
+    Console.WriteLine("- - - - - - - Задача 42 успешно выполнена! - - - - - - -\n");
+} 
+static void Seminar_6_Task_40() {
+          // Задача 40. Напишите программу, которая принимает на вход три числа и проверяет,
+          // может ли существовать треугольник со сторонами такой длины.
+    Random RundNum = new Random();
+    int A = RundNum.Next(1,21);
+    int B = RundNum.Next(1,21);
+    int C = RundNum.Next(1,21);
+
+    Console.WriteLine($"Заданы числа: {A}, {B}, {C}");
+    if (((A+B) > C) & ((A+C) > B) & ((B+C) > A)) Console.WriteLine("Треугольник с указанными сторонами существует.");
+      else Console.WriteLine("Треугольника со указанными сторонами не существует!"); 
+    Console.WriteLine("- - - - - - - Задача 40 успешно выполнена! - - - - - - -\n");
+} 
+static void Seminar_6_Task_39() {
+          // Задача 39. Напишите программу, которая перевернёт одномерный массив
+          // (последний элемент будет на первом месте, а первый - на последнем и т.д.)
+    Random RundNum = new Random();
+    int size = RundNum.Next(6,16);
+    int[] Nums = new int[size];
+
+          // Заполнение массива и его печать выполняются соответствующими подпрограммами
+    Seminar_6_Task_39_FillArray(Nums, -9, 10);
+    Seminar_6_Task_39_PrintArray(Nums);
+    Seminar_6_Task_39_ArrayReverse(Nums);
+    Seminar_6_Task_39_PrintArray(Nums);
+    Console.WriteLine("- - - - - - - Задача 39 успешно выполнена! - - - - - - -\n");
+} 
+static void Seminar_6_Task_39_ArrayReverse(int[] Mas) {
+          // Задача 39. Подпрограмма "перворота" массива 
+    int MaxIndex = Mas.Length - 1;
+          // Обмен элемиентов местами при помощи кортежа
+    for (int i=0; i<(Mas.Length/2); i++) (Mas[i], Mas[MaxIndex-i]) = (Mas[MaxIndex-i], Mas[i]);
+}
+static void Seminar_6_Task_39_FillArray(int[] Mas, int minValue = 0, int maxValue = 9) {
+          // Задача 39. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    for (int i=0; i<Mas.Length; i++) Mas[i] = RundNum.Next(minValue,maxValue);
+}
+static void Seminar_6_Task_39_PrintArray(int[] Mas) {
+          // Задача 33. Подпрограмма печати массива
+    for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
+    Console.Write("\n");
+}
+
          // Семинары, урок 5 (29.09.22)
-Seminar_5_Task_37();
+// Seminar_5_Task_37();
 // Seminar_5_Task_35();
 // Seminar_5_Task_33();
 // Seminar_5_Task_32();
