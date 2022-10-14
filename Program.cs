@@ -1,7 +1,200 @@
 ﻿         // Выполнение практических задааний на семинарах
 
-         // Семинары, урок 5 (03.10.22)
-Seminar_6_Task_45();
+         // Семинары, урок 9 (13.10.22)
+Seminar_9_Task_69();
+// Seminar_9_Task_67();
+// Seminar_9_Task_65();
+// Seminar_9_Task_60();
+
+
+static void Seminar_9_Task_69() {
+          // Задача 69. Напишите программу, которая на вход принимает два числа A и B,
+          // и возводит число А в целую степень B с помощью рекурсии.
+    /*
+    Random RundNum = new Random();
+    int Num = RundNum.Next(100,1001);
+
+    int DigitSumCalculation(int N, int Sum=0) {
+        if(N == 0) return Sum;      
+        Sum = Sum + N%10;
+        N /=10;
+    return DigitSumCalculation(N, Sum);
+    }
+    Console.WriteLine($"{Num} => {DigitSumCalculation(Num)}");
+*/
+    Console.WriteLine("- - - - - - - Задача 69 успешно выполнена! - - - - - - -\n");
+} 
+static void Seminar_9_Task_67() {
+          // Задача 67. Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр.
+    Random RundNum = new Random();
+    int Num = RundNum.Next(100,1001);
+
+    int DigitSumCalculation(int N, int Sum=0) {
+        if(N == 0) return Sum;      
+        Sum = Sum + N%10;
+        N /=10;
+    return DigitSumCalculation(N, Sum);
+    }
+    Console.WriteLine($"{Num} => {DigitSumCalculation(Num)}");
+
+    Console.WriteLine("- - - - - - - Задача 67 успешно выполнена! - - - - - - -\n");
+} 
+static void Seminar_9_Task_65() {
+          // Задача 65. Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+    Random RundNum = new Random();
+    int M = RundNum.Next(100,500);
+    int N = RundNum.Next(500,1001);
+    int i = M;
+    
+    FindNaturalNums(N, i);
+    void FindNaturalNums(int N, int i) {
+        i++;
+        Console.WriteLine(i);
+        if (i>=N) return; 
+        FindNaturalNums(N, i);
+    }
+} 
+static void Seminar_9_Task_63() {
+          // Задача 63.
+    Random RundNum = new Random();
+    int N = RundNum.Next(100,1001);
+    int i = 0;
+    
+    FindNaturalNums(N, i);
+    void FindNaturalNums(int N, int i) {
+        i++;
+        Console.WriteLine(i);
+        if (i>=N) return; 
+        FindNaturalNums(N, i);
+    }
+} 
+
+/*         // Семинары, урок 8 (10.10.22)
+// Seminar_8_Task_59();
+// Seminar_8_Task_55();
+// Seminar_8_Task_53();
+
+static void Seminar_8_Task_55() {
+          // Задача 55. Задайте двумерный массив.
+          // Напишите программу, которая заменяет строки на столбцы.
+          // В случае, если это невозможно, программа должна вывести сообщение для пользователя.
+    Random RundNum = new Random();
+    int rows = RundNum.Next(3,8);
+//    int columns = RundNum.Next(3,8);
+    int columns = rows;
+
+    if (rows == columns) {
+        int[,] Mas = new int[rows,columns];
+        Seminar_8_Task_55_FillArray(Mas);            // Заполнение массива  
+        Console.WriteLine("Исходный массив:");
+        Seminar_8_Task_55_PrintArray(Mas);
+        for(int i = 0; i < rows; i++)
+            for(int j = i; j < columns; j++) (Mas[j, i], Mas[i, j]) = (Mas[i, j], Mas[j, i]);
+        Console.WriteLine("Массив после обмена:");
+        Seminar_8_Task_55_PrintArray(Mas);
+    }
+      else Console.WriteLine($"Массив разносторонний ({rows}, {columns}) - обмен невозможен!");
+          
+    Console.WriteLine("\n- - - - - - - Задача 55 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_8_Task_55_FillArray(int[,] Mas) {
+          // Задача 55. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    int rows = Mas.GetLength(0);
+    int columns = Mas.GetLength(1);
+
+    for(int i=0; i<rows; i++) 
+        for(int j=0; j<columns; j++) Mas[i,j] = RundNum.Next(-100,101);
+}
+static void Seminar_8_Task_55_PrintArray(int[,] Mas) {
+          // Задача 55. Подпрограмма печати массива
+    int rows = Mas.GetLength(0);
+    int columns = Mas.GetLength(1);
+    
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<columns; j++) Console.Write(Mas[i,j] + "\t");    
+        Console.WriteLine(""); 
+    }
+}
+static void Seminar_8_Task_53() {
+          // Задача 53. Задайте двумерный массив.
+          // Напишите программу, которая поменяет местами первую и последнюю строку массива.
+    Random RundNum = new Random();
+    int rows = RundNum.Next(3,8);
+    int columns = RundNum.Next(3,8);
+    int[,] Mas = new int[rows,columns];
+    
+    Seminar_8_Task_53_FillArray(Mas);            // Заполнение массива  
+    Console.WriteLine("Исходный массив:");
+    Seminar_8_Task_53_PrintArray(Mas); 
+          // Обмен элементов первой и последней срок    
+    for(int j=0; j<columns; j++) (Mas[0,j], Mas[rows-1,j]) = (Mas[rows-1,j], Mas[0,j]);
+    Console.WriteLine("Массив после обмена:");
+    Seminar_8_Task_53_PrintArray(Mas);
+
+    Console.WriteLine("\n- - - - - - - Задача 53 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_8_Task_53_FillArray(int[,] Mas) {
+          // Задача 53. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    int rows = Mas.GetLength(0);
+    int columns = Mas.GetLength(1);
+
+    for(int i=0; i<rows; i++) 
+        for(int j=0; j<columns; j++) Mas[i,j] = RundNum.Next(-100,101);
+}
+static void Seminar_8_Task_53_PrintArray(int[,] Mas) {
+          // Задача 53. Подпрограмма печати массива
+    int rows = Mas.GetLength(0);
+    int columns = Mas.GetLength(1);
+    
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<columns; j++) Console.Write(Mas[i,j] + "\t");    
+        Console.WriteLine(""); 
+    }
+}
+*/
+/*         // Семинары, урок 7 (06.10.22)
+// Seminar_7_Task_45();
+// Seminar_7_Task_44();
+// Seminar_7_Task_42();
+// Seminar_7_Task_40();
+// Seminar_7_Task_46();
+
+static void Seminar_7_Task_46() {
+          // Задача 46. Задайте двумерный массив размером M * N, заполненный случайными целыми числами.
+    Random RundNum = new Random();
+    int rows = RundNum.Next(4,8);
+    int columns = RundNum.Next(4,8);
+    int[,] Mas = new int[rows,columns];
+          
+    Seminar_7_Task_46_FillArray(Mas);            // Заполнение массива  
+    Console.WriteLine("Исходный массив:");
+    Seminar_7_Task_46_PrintArray(Mas);           // Печать массива  
+    Console.WriteLine("\n- - - - - - - Задача 46 успешно выполнена! - - - - - - -\n");
+}
+static void Seminar_7_Task_46_FillArray(int[,] Mas) {
+          // Задача 46. Подпрограмма заполнения массива
+    Random RundNum = new Random();
+    int rows = Mas.GetLength(0);
+    int columns = Mas.GetLength(1);
+
+    for(int i=0; i<rows; i++) 
+        for(int j=0; j<columns; j++) Mas[i,j] = RundNum.Next(-100,101);
+}
+static void Seminar_7_Task_46_PrintArray(int[,] Mas) {
+          // Задача 46. Подпрограмма печати массива
+    int rows = Mas.GetLength(0);
+    int columns = Mas.GetLength(1);
+    
+    for(int i=0; i<rows; i++) {
+        for(int j=0; j<columns; j++) Console.Write(Mas[i,j] + "\t");    
+        Console.WriteLine(""); 
+    }
+}
+*/
+/*         // Семинары, урок 6 (03.10.22)
+// Seminar_6_Task_45();
 // Seminar_6_Task_44();
 // Seminar_6_Task_42();
 // Seminar_6_Task_40();
@@ -114,8 +307,8 @@ static void Seminar_6_Task_39_PrintArray(int[] Mas) {
     for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
     Console.Write("\n");
 }
-
-         // Семинары, урок 5 (29.09.22)
+*/
+/*         // Семинары, урок 5 (29.09.22)
 // Seminar_5_Task_37();
 // Seminar_5_Task_35();
 // Seminar_5_Task_33();
@@ -169,10 +362,10 @@ static void Seminar_5_Task_35_FindValues(int[] Mas) {
     int k = 0;
     for (int i=0; i<Mas.Length; i++)
         if ((Mas[i] >= 10) & (Mas[i] <= 99)) k++;
-/*    while (found & (i<Mas.Length)) {
-        if (Mas[i] == Num) found = true;
-        i++; 
-    } */
+//    while (found & (i<Mas.Length)) {
+//        if (Mas[i] == Num) found = true;
+//        i++; 
+//    } 
     Console.Write($"В массиве имеется {k} чисел, лежащих в диапазоне [10, 99].\n");
 }
 static void Seminar_5_Task_35_FillArray(int[] Mas) {
@@ -203,10 +396,10 @@ static void Seminar_5_Task_33_FindValue(int[] Mas, int Num) {
     bool found = false;
 //    int i = 0;
     for (int i=0; (!(found) & i<Mas.Length); i++) if (Mas[i] == Num) found = true;
-/*    while (found & (i<Mas.Length)) {
-        if (Mas[i] == Num) found = true;
-        i++; 
-    } */
+//    while (found & (i<Mas.Length)) {
+//        if (Mas[i] == Num) found = true;
+//        i++; 
+//    } 
     if (found) Console.Write($"Число {Num} присутствует в массиве.\n");
       else Console.Write($"Число {Num} не присутствует в массиве.\n");
 }
@@ -247,8 +440,8 @@ static void Seminar_5_Task_32_PrintArray(int[] Mas) {
     for (int i=0; i<Mas.Length; i++) Console.Write(Mas[i] + "\t");
     Console.Write("\n");
 }
-
-         // Семинары, урок 4 (26.09.22)
+*/
+/*         // Семинары, урок 4 (26.09.22)
 // Seminar_3_Task_17();
 // Seminar_3_Task_18();
 // Seminar_4_Task_30();
@@ -285,6 +478,7 @@ static void Seminar_4_Task_26()      {
     Console.WriteLine($"Количество цифр в числе {Num}: {Math.Ceiling(Math.Log10(Num))}");
     Console.WriteLine("- - - - - - - Задача 26 успешно выполнена! - - - - - - -\n");
 }
+*/
 /*
          // Семинары, урок 3 (22.09.22)
 // Seminar_3_Task_17();
@@ -354,7 +548,8 @@ static void Seminar_3_Task_17() {
                  else if ((x < 0) && (y < 0)) Console.WriteLine($"Точка ({x}, {y}) лежит в третьей четверти.");
                           else if ((x > 0) && (y < 0)) Console.WriteLine($"Точка ({x}, {y}) лежит в четвертой четверти.");
                                    else Console.WriteLine($"Точка ({x}, {y}) лежит на одной из осей.");
-} */
+}
+*/
 /*
          // Семинары, урок 2 (19.09.22)
 // Seminar_2_Task_09();
